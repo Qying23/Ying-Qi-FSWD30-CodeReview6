@@ -130,7 +130,7 @@
 
 
 
-<!-- *****   Bücher (siehe unter "myscript.js")   *****-->
+<!-- *****   Bücher (siehe unter "myscript.js" // ich kann nicht verlinken deswegen ist JavaScript hier)   *****-->
     <div class="container">
       <div class="row"> 
       <div class="col col-md-12 col-sm-12 colhead"><h1 id="buecher">Bücher</h1>
@@ -138,7 +138,10 @@
       </div>
       <div class="row" id="buch">
       </div>
-<!-- *****   DVD (siehe unter "myscript.js")   *****-->
+
+
+
+<!-- *****   DVD (siehe unter "myscript.js" // ich kann nicht verlinken deswegen ist JavaScript hier)   *****-->
       <div class="row"> 
         <div class="col col-md-12 col-sm-12 colhead"><h1  id="DVDHEAD">DVDs</h1>
         </div>
@@ -154,7 +157,7 @@ class Dvds {
   constructor(title, actor,actor1, genre, publisher, img, rating) {
     this.title = title;
     this.actor = actor;
-    this.actor = actor;
+    this.actor1 = actor1;
     this.genre = genre;
     this.publisher = publisher;
     this.img = img;
@@ -182,14 +185,15 @@ for (var i=0; i < newDvds.length; i++) {
     '<div class="pic"><img Class="imgDvds rounded" src="' + newDvds[i].img + '">' + 
     '</div>' + 
     '<div class="details my-3 bg-light outline-dark">Title: ' + newDvds[i].title 
-           + ' <br>Author: ' + newDvds[i].author 
+           + ' <br>Actor: ' + newDvds[i].actor 
+           + ' <br>Actor: ' + newDvds[i].actor1 
            + ' <br>Genre: ' + newDvds[i].genre 
            + ' <br>Publisher: ' + newDvds[i].publisher 
            + ' <br> ' 
            + 
     '</div>' + 
     '<div class="ratandstars"><div class="rating"><button id="add" class="btnrating" value="">Rating:</button>' + 
-    '</div>' + '<div class="stars" id="rating"><span>   ★</span><span>★</span><span>★</span><span>★</span><span>★ </span>' + newDvds[i].rating + '</div></div>' 
+    '</div>' + '<div class="stars" id="rating">' + newDvds[i].rating + '</div></div>' 
   '</div>';
    }
     </script>
