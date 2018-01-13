@@ -133,13 +133,58 @@
 <!-- *****   Bücher (siehe unter "myscript.js" // ich kann nicht verlinken deswegen ist JavaScript hier)   *****-->
     <div class="container">
       <div class="row"> 
-      <div class="col col-md-12 col-sm-12 colhead"><h1 id="buecher">Bücher</h1>
+      <div class="col col-md-12 col-sm-12 colhead"><h1 id="BOOKHEAD">Bücher</h1>
       </div>
-      </div>
-      <div class="row" id="buch">
-      </div>
+    </div>
+    <div class="row" id="BOOK">
+    </div>
+
+    <script>
+      class Books {
+      constructor(title, author, genre, publisher, img, rating) {
+        this.title = title;
+        this.author = author;
+        this.genre = genre;
+        this.publisher = publisher;
+        this.img = img;
+        this.rating = rating; 
+      }
+    }
 
 
+    //Filling data for the constructor class Books
+    var newBooks = [
+    new Books("Nirvana in Fire", "Hai Yan", "Wuxia, Geschichte, Politik", "Blog / Internet", "img/nirvana.jpg", 5),
+    new Books("the princess Wei Yang", "Cheng Tingyu", "Fantasie Roman", "Blog / Internet", "img/wei.jpg", 5),
+    new Books("Ode to Joy", "Yuan Zidan", "Alltag, Drama", "Blog / Internet", "img/ode.jpg", 5),
+    ];
+
+      
+     
+
+    //creating a new variable to show data in HTML
+    var allBooks = document.getElementById("BOOK");
+
+    //Looping to create allBooks Colums and data
+
+    for (var i=0; i < newBooks.length; i++) {
+      allBooks.innerHTML += 
+      '<div class="columsBooks col-md-4 col-sm-12" id="' + i +'">' + 
+        '<div class="pic"><img class="imgBooks rounded" src="' + newBooks[i].img + '">' + 
+        '</div>' + 
+        '<div class="details my-3 bg-light outline-dark">Title: ' + newBooks[i].title 
+               + ' <br>Author: ' + newBooks[i].author 
+               + ' <br>Genre: ' + newBooks[i].genre 
+               + ' <br>Publisher: ' + newBooks[i].publisher 
+               + ' <br> ' 
+               + 
+        '</div>' + 
+        '<div class="ratandstars"><div class="rating"><button id="add" class="btnrating" value="">Rating:</button>' + 
+        '</div>' + '<div id="sarat">' + newBooks[i].rating + '</div></div>' 
+      '</div>';
+    }
+
+    </script>
 
 <!-- *****   DVD (siehe unter "myscript.js" // ich kann nicht verlinken deswegen ist JavaScript hier)   *****-->
       <div class="row"> 
@@ -153,49 +198,49 @@
 
     <script type="text/javascript">
       //Bulduing a constructor class for the data
-class Dvds {
-  constructor(title, actor,actor1, genre, publisher, img, rating) {
-    this.title = title;
-    this.actor = actor;
-    this.actor1 = actor1;
-    this.genre = genre;
-    this.publisher = publisher;
-    this.img = img;
-    this.rating = rating //0; //or rating
-  }
-}
+      class Dvds {
+        constructor(title, actor,actor1, genre, publisher, img, rating) {
+          this.title = title;
+          this.actor = actor;
+          this.actor1 = actor1;
+          this.genre = genre;
+          this.publisher = publisher;
+          this.img = img;
+          this.rating = rating //0; //or rating
+        }
+      }
 
 
-//Filling data for the constructor class Dvds
-var newDvds = [
-new Dvds("City lights", "Charlie Chaplin","Virginia Cherrill", "Romantic Comedy", "United Artists", "img/citylights_image.jpg", 4),
-new Dvds("Lawrence of Arabia", "Peter O’Toole","Alec Guinness", "Historical Drama", "Columbia Pictures", "img/Lawrence_of_arabia.jpg", 4),
-new Dvds("Gone with the Wind", "Clark Gable", "Vivien Leigh", "Drama", "Selznick International", "img/gone.jpg", 5),
-];
+      //Filling data for the constructor class Dvds
+      var newDvds = [
+      new Dvds("City lights", "Charlie Chaplin","Virginia Cherrill", "Romantic Comedy", "United Artists", "img/citylights_image.jpg", 4),
+      new Dvds("Lawrence of Arabia", "Peter O’Toole","Alec Guinness", "Historical Drama", "Columbia Pictures", "img/Lawrence_of_arabia.jpg", 4),
+      new Dvds("Gone with the Wind", "Clark Gable", "Vivien Leigh", "Drama", "Selznick International", "img/gone.jpg", 5),
+      ];
 
 
-//creating a new variable to show data in HTML
-var allDvds = document.getElementById("DVD");
+      //creating a new variable to show data in HTML
+      var allDvds = document.getElementById("DVD");
 
-//Looping to create allDvds Colums and data
+      //Looping to create allDvds Colums and data
 
-for (var i=0; i < newDvds.length; i++) {
-  allDvds.innerHTML += 
-  '<div class="columsDvd col-md-4 col-sm-12" id="' + i +'">' + 
-    '<div class="pic"><img Class="imgDvds rounded" src="' + newDvds[i].img + '">' + 
-    '</div>' + 
-    '<div class="details my-3 bg-light outline-dark">Title: ' + newDvds[i].title 
-           + ' <br>Actor: ' + newDvds[i].actor 
-           + ' <br>Actor: ' + newDvds[i].actor1 
-           + ' <br>Genre: ' + newDvds[i].genre 
-           + ' <br>Publisher: ' + newDvds[i].publisher 
-           + ' <br> ' 
-           + 
-    '</div>' + 
-    '<div class="ratandstars"><div class="rating"><button id="add" class="btnrating" value="">Rating:</button>' + 
-    '</div>' + '<div class="stars" id="rating">' + newDvds[i].rating + '</div></div>' 
-  '</div>';
-   }
+      for (var i=0; i < newDvds.length; i++) {
+        allDvds.innerHTML += 
+        '<div class="columsDvd col-md-4 col-sm-12" id="' + i +'">' + 
+          '<div class="pic"><img Class="imgDvds rounded" src="' + newDvds[i].img + '">' + 
+          '</div>' + 
+          '<div class="details my-3 bg-light outline-dark">Title: ' + newDvds[i].title 
+                 + ' <br>Actor: ' + newDvds[i].actor 
+                 + ' <br>Actor: ' + newDvds[i].actor1 
+                 + ' <br>Genre: ' + newDvds[i].genre 
+                 + ' <br>Publisher: ' + newDvds[i].publisher 
+                 + ' <br> ' 
+                 + 
+          '</div>' + 
+          '<div class="ratandstars"><div class="rating"><button id="add" class="btnrating" value="">Rating:</button>' + 
+          '</div>' + '<div id="rating">' + newDvds[i].rating + '</div></div>' 
+        '</div>';
+         }
     </script>
  
 <!-- **********      ******** Footer ********      **********-->    
