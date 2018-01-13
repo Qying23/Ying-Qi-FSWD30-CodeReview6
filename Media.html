@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>M-Bibliothek</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link href="https://fonts.googleapis.com/css?family=Exo+2|Grand+Hotel|Libre+Franklin|Sacramento" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.6/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
+  </head>
+
+  <body>
+<!-- **********      ******** Navi ********      **********-->
+    <nav class="navbar navbar-expand-md bg-info navbar-dark">
+      <a class="navbar-brand name" href="media.html" >
+        <h1>Ying's Mediathek</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Bücher</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Filme</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#">Musik</a>
+          </li>  
+        </ul>
+        
+        <form class="  navbar-form navbar-right">
+          <div class="input-group">
+          
+            <div class="nav-item dropdown">
+              <button href="#" class=" btn dropdown-toggle nav-link" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kategorien</button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Bücher</a></li>
+                  <li><a class="dropdown-item" href="#"></a></li>
+                  <li><a class="dropdown-item" href="#">Musik</a></li>
+                </ul>
+            </div>    
+            <input type="text" class="form-control" placeholder="Search">
+            <div class="input-group-btn">
+              <button class="btn btn-default btn-warning" type="submit">submit</button>
+            </div>
+          </div>
+        </form>
+      </div>  
+    </nav>
+<!-- **********  **Add Button mit Funktion **  **********-->
+    <button id="toggleButton" class="btn hinzu d-block mb-4 dropdown-toggle col-10 offset-1 col-md-3" data-toggle="collapse" data-target="#collapse-btn-1">Hinzufügen</button>
+
+    <div class="container collapse mb-5" id="collapse-btn-1">
+      <div class="card p-3">
+        <div class="card-body">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+          <form id="title-form">
+            <div class = "form-group">
+              <label for="title"><strong>Titel</strong></label>
+              <input type="text" id="title" class="form-control form-control-sm" placeholder="Enter Title">
+            </div>
+            
+            <div class = "form-group">
+              <label for="author"><strong>Autor</strong></label>
+              <input type="text" id="author" class="form-control form-control-sm" placeholder="Enter Author">
+            </div>
+            <div class="form-group">
+              <legend>Type:</legend>
+              <select id="selectType"> 
+                <option value="disabled" selected disabled>Select Type!</option>
+                <option value="CD">Buch</option> 
+                <option value="Book">Film</option>
+                <option value="DVD">Musik</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <legend>Genres:</legend>
+              <select id="selectGenre">
+                <option value="disabled" selected disabled>Genre</option> 
+                <option value="Rock">Rock</option> 
+                <option value="Pop">Pop</option>
+                <option value="SF">SF</option>
+                <option value="Krimi">Krimi</option>
+                <option value="Horror">Horror</option>
+                <option value="Komedy">Komedy</option>
+                <option value="Drama">Drama</option>
+                <option value="Dokumentation">Dokumentation</option>
+                <option value="Kinder">Kinder</option>
+              </select>
+            </div>
+
+            <div class = "form-group">
+              <label for="verlag"><strong>Verlag</strong></label>
+              <input type="text" id="publisher" class="form-control form-control-sm" placeholder="Name des Verlages">
+            </div>
+
+            <div class = "form-group">
+              <label for="image"><strong>Bild</strong></label>
+              <input type="text" id="image" class="form-control form-control-sm" placeholder="url">
+            </div>
+
+            <div class = "form-group">
+              <label for="rating"><strong>Bewertung (1-niedrig, 5-hoch)</strong></label>
+              <input type="number" id="rating" class="form-control form-control-sm" placeholder=" deine Bewertung">
+            </div>
+
+            <div class="modal-footer">
+              <button type="button" class="btn btn-primary">Save</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+
+          </form>
+          
+        </div>
+      </div>
+    </div>
+
+
+
+<!-- *****   Bücher (siehe unter "myscript.js")   *****-->
+    <div class="container">
+      <div class="row"> 
+      <div class="col col-md-12 col-sm-12 colhead"><h1 id="buecher">Bücher</h1>
+      </div>
+      </div>
+      <div class="row" id="buch">
+      </div>
+<!-- *****   DVD (siehe unter "myscript.js")   *****-->
+      <div class="row"> 
+        <div class="col col-md-12 col-sm-12 colhead"><h1  id="DVDHEAD">DVDs</h1>
+        </div>
+      </div>
+      <div class="row" id="DVD">
+      </div>
+      
+    </div>
+
+    <script type="text/javascript">
+      //Bulduing a constructor class for the data
+class Dvds {
+  constructor(title, actor,actor1, genre, publisher, img, rating) {
+    this.title = title;
+    this.actor = actor;
+    this.actor = actor;
+    this.genre = genre;
+    this.publisher = publisher;
+    this.img = img;
+    this.rating = rating //0; //or rating
+  }
+}
+
+
+//Filling data for the constructor class Dvds
+var newDvds = [
+new Dvds("City lights", "Charlie Chaplin","Virginia Cherrill", "Romantic Comedy", "United Artists", "img/citylights_image.jpg", 4),
+new Dvds("Lawrence of Arabia", "Peter O’Toole","Alec Guinness", "Historical Drama", "Columbia Pictures", "img/Lawrence_of_arabia.jpg", 4),
+new Dvds("Gone with the Wind", "Clark Gable", "Vivien Leigh", "Drama", "Selznick International", "img/gone.jpg", 5),
+];
+
+
+//creating a new variable to show data in HTML
+var allDvds = document.getElementById("DVD");
+
+//Looping to create allDvds Colums and data
+
+for (var i=0; i < newDvds.length; i++) {
+  allDvds.innerHTML += 
+  '<div class="columsDvd col-md-4 col-sm-12" id="' + i +'">' + 
+    '<div class="pic"><img Class="imgDvds rounded" src="' + newDvds[i].img + '">' + 
+    '</div>' + 
+    '<div class="details my-3 bg-light outline-dark">Title: ' + newDvds[i].title 
+           + ' <br>Author: ' + newDvds[i].author 
+           + ' <br>Genre: ' + newDvds[i].genre 
+           + ' <br>Publisher: ' + newDvds[i].publisher 
+           + ' <br> ' 
+           + 
+    '</div>' + 
+    '<div class="ratandstars"><div class="rating"><button id="add" class="btnrating" value="">Rating:</button>' + 
+    '</div>' + '<div class="stars" id="rating"><span>   ★</span><span>★</span><span>★</span><span>★</span><span>★ </span>' + newDvds[i].rating + '</div></div>' 
+  '</div>';
+   }
+    </script>
+ 
+<!-- **********      ******** Footer ********      **********-->    
+    <footer class="bg-info">
+      
+      <center>copyright by Ying Qi 2018</center>
+      
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+  </body>
+</html>
+
+

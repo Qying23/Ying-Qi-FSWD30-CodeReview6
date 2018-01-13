@@ -1,0 +1,32 @@
+/********************* Navigation ***********************/
+.name{
+	color: grey;
+	font-family: 'Sacramento', cursive;
+	font-size: 40px;
+}	
+
+
+li a{
+	padding: 5px 10px;
+	color: grey;
+	transition: ease-in-out all 300ms;
+}
+
+li a:hover{
+	color: white;
+	background-color: #ADD8E6;
+	border: solid 2px white ;
+	border-radius: 5px;
+	transform: translate(0px, -10px);
+}
+
+.hinzu{
+	background-color: #ADD8E6
+}
+
+/********************* Footer ***********************/
+
+center{
+	color: white;
+	font-family: 'Exo 2', sans-serif;
+}
